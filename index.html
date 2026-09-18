@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Employee Attendance</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="app">
+
+  <header class="app-header">
+    <h1>Employee Attendance</h1>
+    <nav class="menu">
+      <button class="menu-btn active" data-target="attendance-form">Attendance Form</button>
+      <button class="menu-btn" data-target="today-attendance">Today's Attendance</button>
+      <button class="menu-btn" data-target="dashboard">Dashboard</button>
+    </nav>
+  </header>
+
+  <main class="content">
+
+    <!-- ===== Attendance Form ===== -->
+    <section id="attendance-form" class="page active">
+      <h2>Mark Attendance</h2>
+
+      <form id="attendanceForm">
+        <div class="form-group">
+          <label for="empId">Employee ID</label>
+          <input type="text" id="empId" placeholder="e.g. EMP001" required />
+        </div>
+
+        <div class="form-group">
+          <label for="empName">Employee Name</label>
+          <input type="text" id="empName" placeholder="e.g. Jane Doe" required />
+        </div>
+
+        <div class="form-group">
+          <label for="department">Department</label>
+          <input type="text" id="department" placeholder="e.g. Engineering" />
+        </div>
+
+        <div class="form-group">
+          <label for="status">Status</label>
+          <select id="status" required>
+            <option value="Present">Present</option>
+            <option value="Late">Late</option>
+            <option value="Half Day">Half Day</option>
+            <option value="Absent">Absent</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="timeIn">Time</label>
+          <input type="time" id="timeIn" required />
+        </div>
+
+        <button type="submit" class="btn-primary">Submit Attendance</button>
+      </form>
+
+      <p id="formMessage" class="message"></p>
+    </section>
+
+    <!-- ===== Today's Attendance ===== -->
+    <section id="today-attendance" class="page">
+      <h2>Today's Attendance — <span id="todayDate"></span></h2>
+
+      <div class="table-wrapper">
+        <table id="attendanceTable">
+          <thead>
+            <tr>
+              <th>Employee ID</th>
+              <th>Name</th>
+              <th>Department</th>
+              <th>Status</th>
+              <th>Time</th>
+            </tr>
+          </thead>
+          <tbody id="attendanceTableBody"></tbody>
+        </table>
+        <p id="noRecords" class="message" style="display:none;">No attendance records for today yet.</p>
+      </div>
+    </section>
+
+    <!-- ===== Dashboard ===== -->
+    <section id="dashboard" class="page">
+      <div class="wip">
+        <h2>Dashboard</h2>
+        <p class="wip-badge">🚧 Work In Progress 🚧</p>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
